@@ -1,12 +1,10 @@
-package main
-
 import (
 	"os"
 )
 
 func fileExists(filename string) bool {
 	f, err := os.Open(filename)
-	f.Close()
+	checkErr(f.Close())
 	if os.IsNotExist(err) {
 		return false
 	}

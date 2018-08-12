@@ -1,4 +1,4 @@
-package main
+import "sort"
 
 func unique(slice []string) []string {
 	for i := len(slice) - 1; i >= 0; i-- {
