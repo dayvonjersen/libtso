@@ -4,10 +4,10 @@ import (
 
 func fileExists(filename string) bool {
 	f, err := os.Open(filename)
-	checkErr(f.Close())
 	if os.IsNotExist(err) {
 		return false
 	}
 	checkErr(err)
+	checkErr(f.Close())
 	return true
 }
