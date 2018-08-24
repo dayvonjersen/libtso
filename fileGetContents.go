@@ -9,9 +9,9 @@ func fileGetContents(filename string) string {
 	f, err := os.Open(filename)
 	checkErr(err)
 	_, err = io.Copy(contents, f)
-	f.Close()
 	if err != io.EOF {
 		checkErr(err)
 	}
+	checkErr(f.Close())
 	return contents.String()
 }
